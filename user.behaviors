@@ -21,14 +21,14 @@
 [
  ;; The app tag is kind of like global scope. You assign behaviors that affect
  ;; all of Light Table to it.
- ;;[:app :lt.objs.style/set-skin "dark"]
+ [:app :lt.objs.style/set-skin "dark"]
  [:app :lt.objs.plugins/load-js "user_compiled.js"]
-
- [:app :lt.objs.style/provide-theme "dracula" "/home/damian/projects/light-table/dracula.css"]
- [:editor :lt.objs.style/set-theme "dracula"]
 
  ;; The editor tag is applied to all editors
  [:editor :lt.objs.editor/no-wrap]
+
+ [:app :lt.objs.style/provide-theme "dracula" "/Users/damiank/projects/lighttable-dracula-theme/dracula.css"]
+ [:editor :lt.objs.style/set-theme "dracula"]
 
  ;; Here we can add behaviors to just clojure editors
  [:editor.clojure :lt.plugins.clojure/print-length 1000]
@@ -36,19 +36,22 @@
  ;; Behaviors specific to a user-defined object
  [:user.hello :lt.plugins.user/on-close-destroy]
 
- ;; To subtract a behavior, prefix the name with '-' e.g.
- [:app :-lt.objs.intro/show-intro]
+ ;; Highlight current cursor active line in editor
+ [:editor :lt.objs.editor/highlight-current-line]
 
-
- ;; Common behaviors to consider
- ;; ============================
  ;; Show line numbers
  [:editor :lt.objs.editor/line-numbers]
+
  ;; Customize font
- [:app :lt.objs.style/font-settings "Ubuntu Mono" "13"]
+ [:app :lt.objs.style/font-settings "Monaco" "11"]
+
  ;; Auto-close characters e.g. '{[("'
  [:editor :lt.objs.editor/autoclose-brackets]
- ;; Tab settings: Use real tabs, tab size in spaces, spaces per indent
-;; [:editor :lt.objs.editor/tab-settings false 2 2]
-]
 
+;; Tab settings: Use real tabs, tab size in spaces, spaces per indent
+;; [:editor :lt.objs.editor/tab-settings false 2 2]
+
+ ;; To subtract a behavior, prefix the name with '-' e.g.
+ ;;  [:app :-lt.objs.intro/show-intro]
+
+]
