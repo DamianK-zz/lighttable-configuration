@@ -48,8 +48,9 @@
  ;; Auto-close characters e.g. '{[("'
  [:editor :lt.objs.editor/autoclose-brackets]
 
-;; Tab settings: Use real tabs, tab size in spaces, spaces per indent
-;; [:editor :lt.objs.editor/tab-settings false 2 2]
+ ;; Tab settings: Use real tabs, tab size in spaces, spaces per indent
+ ;; Configured for optimal python/django development - 4 spaces instead of tab
+ [:editor :lt.objs.editor/tab-settings false 4 4]
 
  ;; To subtract a behavior, prefix the name with '-' e.g.
  ;;  [:app :-lt.objs.intro/show-intro]
